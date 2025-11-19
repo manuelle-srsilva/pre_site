@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <nav class="nav">  
 
-                <a href="paginicial.html" class="nav-button">Voltar ao início</a>
+                <a href="../index.php" class="nav-button">Voltar ao início</a>
                  
             </nav>
         </div>

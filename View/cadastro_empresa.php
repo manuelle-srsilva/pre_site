@@ -85,14 +85,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <!-- Conteúdo Principal -->
         <main class="main-content">
-            <!-- Botão Anterior (Esquerda) -->
-           <a href="login_empresa.php" class="nav-link">
-  <button class="nav-button-side nav-button-prev">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <polyline points="15 18 9 12 15 6"></polyline>
-    </svg>
-  </button>
-</a>
+
             
 
             <!-- Formulário -->

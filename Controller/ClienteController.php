@@ -37,7 +37,6 @@ class ClienteController{
             $_SESSION['id'] = $cliente['id'];
             $_SESSION['nome'] = $cliente['nome'];
             $_SESSION['email'] = $cliente['email'];
-            var_dump($_SESSION);
 
             return true;
         }

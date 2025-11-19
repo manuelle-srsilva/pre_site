@@ -50,7 +50,7 @@ $cliente_email = $_SESSION['email'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Perfil - Agrybem</title>
-    <link rel="stylesheet" href="../templates/assets/css/style/cliente_perfil.css">
+    <link rel="stylesheet" href="../templates/assets/css/cliente_perfil.css">
 </head>
 <body>
     <!-- HEADER -->
@@ -112,18 +112,7 @@ $cliente_email = $_SESSION['email'];
         </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-logo">
-                <span class="footer-logo-text">Agry<span class="footer-logo-highlight">bem</span></span>
-            </div>
-            <div class="footer-tagline">
-                Mais que produção, uma relação com você!
-            </div>
-        </div>
-    </footer>
-  
+    
     <!-- SCRIPT CORRIGIDO E INTEGRADO -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {

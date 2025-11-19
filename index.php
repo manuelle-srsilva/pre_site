@@ -111,7 +111,7 @@
             <p class="donation-text">
                 No Agrybem, instituições como ONGs e igrejas podem se cadastrar para receber doações de alimentos vindas de produtores, comerciantes e consumidores solidários.
             </p>
-            <a href="doacao_login.html" class="donation-button">Entre como instituição</a>
+            <a href="View/instituicao_login.php" class="donation-button">Entre como instituição</a>
         </div>
         <div class="donation-image">
             <img src="templates/assets/img/agricultordoação" alt="Agricultor com vegetais" class="donation-img">
