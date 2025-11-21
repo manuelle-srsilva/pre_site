@@ -19,7 +19,7 @@
                 <span class="logo-text">Agry<span class="logo-highlight">bem</span></span>
             </div>
             <nav class="nav">
-                <a href="carrinho.html" class="nav-button">Voltar ao carrinho</a>
+                <a href="../View/carrinho.php" class="nav-button">Voltar ao carrinho</a>
             </nav>
         </div>
     </header>
@@ -41,9 +41,9 @@
                         <!-- Item 1: Banana Prata -->
                         <div class="order-item-detail">
                             <div class="item-info-group">
-                                <img src="img/banana.png" alt="Banana Prata" class="order-item-image">
+                                <img src="../templates/assets/img/grid principal 1.png" alt="Banana Prata" class="order-item-image">
                                 <div class="item-text-details">
-                                    <span class="item-name">Banana Prata</span>
+                                    <span class="item-name">Laranja </span>
                                     <span class="item-category">Frutas</span>
                                     <span class="item-base-price">Preço base: R$ 5,99 / kg</span>
                                 </div>
@@ -57,9 +57,9 @@
                         <!-- Item 2: Tomate Cereja -->
                         <div class="order-item-detail">
                             <div class="item-info-group">
-                                <img src="https://via.placeholder.com/80x80?text=Tomate" alt="Tomate Cereja" class="order-item-image">
+                                <img src="../templates/assets/img/tomate pag inicial.png" alt="Tomate Cereja" class="order-item-image">
                                 <div class="item-text-details">
-                                    <span class="item-name">Tomate Cereja</span>
+                                    <span class="item-name">Tomate</span>
                                     <span class="item-category">Legumes</span>
                                     <span class="item-base-price">Preço base: R$ 3,50 / un</span>
                                 </div>
@@ -73,10 +73,10 @@
                         <!-- Item 3: Alface Crespa -->
                         <div class="order-item-detail">
                             <div class="item-info-group">
-                                <img src="https://via.placeholder.com/80x80?text=Alface" alt="Alface Crespa" class="order-item-image">
+                                <img src="../templates/assets/img/banana.png" alt="Alface Crespa" class="order-item-image">
                                 <div class="item-text-details">
-                                    <span class="item-name">Alface Crespa</span>
-                                    <span class="item-category">Folhagens</span>
+                                    <span class="item-name">Banana</span>
+                                    <span class="item-category">Fruta</span>
                                     <span class="item-base-price">Preço base: R$ 2,00 / un</span>
                                 </div>
                             </div>

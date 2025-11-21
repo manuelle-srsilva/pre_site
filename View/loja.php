@@ -216,7 +216,7 @@
                 <!-- Card de Produto 1 -->
                 <div class="product-card" data-product-id="1" data-product-name="Banana" data-product-category="Fruta" data-product-price="17.50" data-product-image="img/Post instagram dia do feirante moderno verde (21) 1.png">
                     <div class="product-image-placeholder">
-                                             <img src="img/Post instagram dia do feirante moderno verde (21) 1.png" alt="">
+                                             <img src="../templates/assets/img/Post instagram dia do feirante moderno verde (21) 1.png" alt="">
                     </div>
                     <div class="product-info-overlay">
 
@@ -244,12 +244,12 @@
                 <!-- Card de Produto 3 -->
                 <div class="product-card" data-product-id="3" data-product-name="Alface" data-product-category="Verdura" data-product-price="3.50" data-product-image="img/alface.png">
                     <div class="product-image-placeholder">
-                                             <img src="../templates/assets/img/alface.png" alt="">
+                                             <img src="../templates/assets/img/cafe pag inicial.png" alt="">
                     </div>
                     <div class="product-info-overlay">
 
-                        <h3 class="product-name">Alface</h3>
-                     <h3 class="product-description">Verdura</br>3,50 R$</h3>
+                        <h3 class="product-name">Café</h3>
+                     <h3 class="product-description">Grãos</br>3,50 R$</h3>
                         
                     </div>
                     <button class="add-to-cart-btn" data-product-id="3">+</button>
@@ -258,25 +258,12 @@
                 <!-- Card de Produto 4 -->
                 <div class="product-card" data-product-id="4" data-product-name="Batata" data-product-category="Raiz" data-product-price="4.20" data-product-image="img/batata.png">
                     <div class="product-image-placeholder">
-                                             <img src="../templates/assets/img/batata.png" alt="">
+                                             <img src="../templates/assets/img/tomate pag inicial.png" alt="">
                     </div>
                     <div class="product-info-overlay">
 
-                        <h3 class="product-name">Batata</h3>
-                     <h3 class="product-description">Raiz</br>4,20 R$</h3>
-                        
-                    </div>
-                    <button class="add-to-cart-btn" data-product-id="4">+</button>
-                </div>
-                 <!-- Card de Produto 4 -->
-                <div class="product-card" data-product-id="4" data-product-name="Batata" data-product-category="Raiz" data-product-price="4.20" data-product-image="img/batata.png">
-                    <div class="product-image-placeholder">
-                                             <img src="img/batata.png" alt="">
-                    </div>
-                    <div class="product-info-overlay">
-
-                        <h3 class="product-name">Batata</h3>
-                     <h3 class="product-description">Raiz</br>4,20 R$</h3>
+                        <h3 class="product-name">Tomate</h3>
+                     <h3 class="product-description">Fruta</br>4,20 R$</h3>
                         
                     </div>
                     <button class="add-to-cart-btn" data-product-id="4">+</button>
@@ -285,43 +272,18 @@
                  <!-- Card de Produto 4 -->
                 <div class="product-card" data-product-id="4" data-product-name="Batata" data-product-category="Raiz" data-product-price="4.20" data-product-image="img/batata.png">
                     <div class="product-image-placeholder">
-                                             <img src="img/batata.png" alt="">
+                                             <img src="../templates/assets/img/banana.png" alt="">
                     </div>
                     <div class="product-info-overlay">
 
-                        <h3 class="product-name">Batata</h3>
-                     <h3 class="product-description">Raiz</br>4,20 R$</h3>
-                        
-                    </div>
-                    <button class="add-to-cart-btn" data-product-id="4">+</button>
-                </div>
-                 <!-- Card de Produto 4 -->
-                <div class="product-card" data-product-id="4" data-product-name="Batata" data-product-category="Raiz" data-product-price="4.20" data-product-image="img/batata.png">
-                    <div class="product-image-placeholder">
-                                             <img src="img/batata.png" alt="">
-                    </div>
-                    <div class="product-info-overlay">
-
-                        <h3 class="product-name">Batata</h3>
-                     <h3 class="product-description">Raiz</br>4,20 R$</h3>
+                        <h3 class="product-name">Banana</h3>
+                     <h3 class="product-description">Fruta</br>4,20 R$</h3>
                         
                     </div>
                     <button class="add-to-cart-btn" data-product-id="4">+</button>
                 </div>
 
-                <!-- Card de Produto 5 -->
-                <div class="product-card" data-product-id="5" data-product-name="Maçã" data-product-category="Fruta" data-product-price="9.90" data-product-image="img/maca.png">
-                    <div class="product-image-placeholder">
-                                             <img src="img/maca.png" alt="">
-                    </div>
-                    <div class="product-info-overlay">
-
-                        <h3 class="product-name">Maçã</h3>
-                     <h3 class="product-description">Fruta</br>9,90 R$</h3>
-                        
-                    </div>
-                    <button class="add-to-cart-btn" data-product-id="5">+</button>
-                </div>
+             
 
             </div>
         </div>

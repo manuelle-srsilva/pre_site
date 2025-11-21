@@ -30,32 +30,33 @@
             <!-- Container de Itens do Carrinho -->
             <div id="cart-items-container">
                 <!-- ITENS DO CARRINHO ESTÁTICOS PARA FUTURA INTEGRAÇÃO COM PHP -->
-                
-                <!-- Item 1: Banana Prata (por kg) -->
-                <div class="cart-item" data-product-id="1">
-                    <img src="../templates/assets/img/banana.png" alt="Banana Prata" class="cart-item-image">
+              
+                <!-- Item 2: Tomate Cereja (por unidade) -->
+                <div class="cart-item" data-product-id="2">
+                    <img src="../templates/assets/img/banana.png" alt="Tomate Cereja" class="cart-item-image">
                     <div class="cart-item-details">
-                        <span class="cart-item-name">Banana Prata</span>
-                        <span class="cart-item-category">Frutas</span>
-                        <span class="cart-item-base-price">Preço base: R$ 5,99 / kg</span>
+                        <span class="cart-item-name">Banana</span>
+                        <span class="cart-item-category">Fruta</span>
+                        <span class="cart-item-base-price">Preço base: R$ 3,50 / un</span>
                     </div>
                     <div class="cart-item-controls">
                         <div class="quantity-unit-group">
                             <!-- Input de quantidade reativado -->
-                            <input type="number" value="1.5" min="0.1" step="0.1">
-                            <!-- Select de unidade reativado com opções kg/g -->
+                            <input type="number" value="3" min="1" step="1">
+                            <!-- Select de unidade reativado com opção un -->
                             <select>
-                                <option value="kg" selected>kg</option>
-                                <option value="g">g</option>
+                                <option value="un" selected>un</option>
                             </select>
                         </div>
-                        <span class="item-total-price">R$ 8,99                        <!-- O botão de remover deve ser estático -->
-                        <button class="remove-item-btn">Remover</button>           </div>
+                        <span class="item-total-price">R$ 10,50</span>
+                        <button class="remove-item-btn" disabled>Remover</button>
+                    </div>
                 </div>
+
 
                 <!-- Item 2: Tomate Cereja (por unidade) -->
                 <div class="cart-item" data-product-id="2">
-                    <img src="https://via.placeholder.com/80x80?text=Tomate" alt="Tomate Cereja" class="cart-item-image">
+                    <img src="../templates/assets/img/tomate pag inicial.png" alt="Tomate Cereja" class="cart-item-image">
                     <div class="cart-item-details">
                         <span class="cart-item-name">Tomate Cereja</span>
                         <span class="cart-item-category">Legumes</span>
@@ -77,10 +78,10 @@
 
                 <!-- Item 3: Alface Crespa (por unidade) -->
                 <div class="cart-item" data-product-id="3">
-                    <img src="https://via.placeholder.com/80x80?text=Alface" alt="Alface Crespa" class="cart-item-image">
+                    <img src="../templates/assets/img/grid principal 1.png" alt="Alface Crespa" class="cart-item-image">
                     <div class="cart-item-details">
-                        <span class="cart-item-name">Alface Crespa</span>
-                        <span class="cart-item-category">Folhagens</span>
+                        <span class="cart-item-name">Laranja</span>
+                        <span class="cart-item-category">Fruta</span>
                         <span class="cart-item-base-price">Preço base: R$ 2,00 / un</span>
                     </div>
                     <div class="cart-item-controls">
