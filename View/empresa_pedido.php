@@ -114,21 +114,7 @@ if ($empresa_id) {
                             $isDisabled = ($status === 'canceled') ? 'disabled' : '';
                             echo '<div class="status-dropdown-container">';
                             if ($status === 'canceled') {
-                                echo '<span class="status-badge status-cancelado" style="    background-color: #cd1818ff; color: white;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 5px 10px;
-    border-radius: 5px;
-    white-space: nowrap;
-    cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: none;
-    outline: none;
-    background-repeat: no-repeat;
-    background-position: right 5px center;
-    padding-right: 25px;">🔴 Cancelado</span>';
+                                echo '<span class="status-badge status-cancelado" style="    background-color: #cd1818ff; color: white; font-size: 14px; font-weight: 700; padding: 5px 10px; border-radius: 5px; white-space: nowrap; cursor: pointer; -webkit-appearance: none; -moz-appearance: none; appearance: none; border: none; outline: none; background-repeat: no-repeat; background-position: right 5px center; padding-right: 25px;">🔴 Cancelado</span>';
                             } else {
                                 echo '<select data-order-id="' . intval($o['id']) . '" class="' . $selectClass . '" onchange="updateStatus(this)" ' . $isDisabled . '>';
                                 echo '<option value="pending" ' . $selPending . '>🟡 Pendente</option>';
