@@ -112,7 +112,7 @@ $mapUrl = "https://www.google.com/maps/embed/v1/place?key={$googleMapsApiKey}&q=
 
         <div class="container">
             <div class="comment-feed">
-                <a href="../View/pag_comentario.php">Comentários</a>
+                <a href="../View/pag_comentario_empresa.php">Comentários</a>
             </div>
         </div>
 

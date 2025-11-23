@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // ... (toda a lógica PHP do início do arquivo permanece a mesma)
 session_start();
 require_once '../vendor/autoload.php';
@@ -84,7 +84,7 @@ $countComentarios = $comentarioController->countComentarios();
             </div>
             <nav class="nav">
                
-                <a href="loja.php" class="nav-link nav-button">Voltar</a>
+                <a href="../View/empresa_loja.php" class="nav-link nav-button">Voltar</a>
             </nav>
             <div class="menu-container">
                 <button class="menu-toggle" aria-label="Menu">
@@ -122,16 +122,7 @@ $countComentarios = $comentarioController->countComentarios();
                                         
                                         <?php if ($id_usuario_logado && $id_usuario_logado == $comentario["id_cliente"]): ?>
                                             <div class="comment-actions">
-                                                <button class="edit-btn" onclick="toggleEdit(<?= $comentario['id'] ?>)">
-                                                    <i class="fas fa-edit"></i> Editar
-                                                </button>
-                                                <form method="post" action="pag_comentario.php" style="display: inline;" onsubmit="return confirm('Tem certeza que deseja excluir este comentário?');">
-                                                    <input type="hidden" name="action" value="delete">
-                                                    <input type="hidden" name="comentario_id" value="<?= $comentario['id'] ?>">
-                                                    <button type="submit" class="delete-btn">
-                                                        <i class="fas fa-trash-alt"></i> Excluir
-                                                    </button>
-                                                </form>
+                                                
                                             </div>
                                         <?php endif; ?>
                                     </div>
@@ -159,37 +150,6 @@ $countComentarios = $comentarioController->countComentarios();
             </section>
         </div>
     </main>
-
-    <!-- FORMULÁRIO FIXO PARA CRIAR NOVO COMENTÁRIO (AJUSTADO) -->
-    <div class="fixed-comment-form-wrapper">
-        <form id="comment-form" method="post" action="pag_comentario.php"> 
-            <input type="hidden" name="action" value="create">
-            
-            <div class="form-group">
-                <!-- A tag <textarea> é mais apropriada para múltiplos-linhas -->
-                <textarea name="comentario" id="new-comment-text" placeholder="Escreva seu comentário..." required></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">
-                <i class="fas fa-paper-plane"></i> Enviar
-            </button>
-        </form>
-    </div>
-
-    <script>
-        function toggleEdit(commentId) {
-            const commentBody = document.getElementById('comment-body-' + commentId);
-            const editForm = document.getElementById('edit-form-' + commentId);
-
-            if (commentBody.style.display === 'none') {
-                commentBody.style.display = 'block';
-                editForm.style.display = 'none';
-            } else {
-                commentBody.style.display = 'none';
-                editForm.style.display = 'flex';
-            }
-        }
-    </script>
 
 </body>
 </html>

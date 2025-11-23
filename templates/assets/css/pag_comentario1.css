@@ -338,11 +338,10 @@ body {
 .comment-body {
     margin-bottom: 0;
     color: hsl(0, 0%, 20%);
-    white-space: pre-wrap;
     word-wrap: break-word;
     line-height: 1.5;
     font-size: 15px;
-    padding-left: -10px;
+    padding-left: -50px;
 }
 
 /* ===== MODO DE EDIÇÃO ===== */
@@ -453,13 +452,23 @@ body {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
+#comment-form textarea {
+    width: 550px;
+    height: 45px;
+    padding-top: 15px;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
 .form-group {
     flex: 1;
 }
 
 /* Ajuste para o campo de texto (input) que foi usado no HTML */
 #comment-form input[type="text"] {
-    width: 100%;
+    width: 300px;
     height: 45px;
     border: none; /* Removido a borda para se parecer mais com a imagem */
     padding: 10px 14px;
