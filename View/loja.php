@@ -282,6 +282,7 @@ $mapUrl = "https://www.google.com/maps/embed/v1/place?key={$googleMapsApiKey}&q=
                                 $foto_base64 = base64_encode($produto['foto']);
                                 $foto_src = 'data:image/jpeg;base64,' . $foto_base64;
                                 $preco_formatado = number_format($produto['preco'], 2, ',', '.');
+                                $unidade_medida = strtolower($produto['medida']) === 'kg' ? 'kg' : 'un';
                             ?>
 
                             <div class="product-card"
@@ -299,7 +300,7 @@ $mapUrl = "https://www.google.com/maps/embed/v1/place?key={$googleMapsApiKey}&q=
                                 <div class="product-info-overlay">
                                     <h3 class="product-name"><?php echo htmlspecialchars($produto['nome']); ?></h3>
                                     <h3 class="product-description">
-                                        <?php echo htmlspecialchars($produto['categoria']); ?><br>
+                                        <?php echo htmlspecialchars($produto['categoria']); ?> (<?php echo htmlspecialchars($produto['medida']); ?>)<br>
                                         R$ <?php echo $preco_formatado; ?>
                                     </h3>
                                 </div>

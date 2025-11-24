@@ -278,7 +278,8 @@ $mapUrl = "https://www.google.com/maps/embed/v1/place?key={$googleMapsApiKey}&q=
                                 data-product-name="<?php echo htmlspecialchars($produto['nome']); ?>"
                                 data-product-category="<?php echo htmlspecialchars($produto['categoria']); ?>"
                                 data-product-price="<?php echo $produto['preco']; ?>"
-                                data-product-image="<?php echo $foto_src; ?>">
+                                data-product-image="<?php echo $foto_src; ?>"
+                                data-product-measure="<?php echo htmlspecialchars($produto['medida']); ?>">
 
                                 <div class="product-image-placeholder">
                                     <img src="<?php echo $foto_src; ?>" alt="<?php echo htmlspecialchars($produto['nome']); ?>">
@@ -287,7 +288,7 @@ $mapUrl = "https://www.google.com/maps/embed/v1/place?key={$googleMapsApiKey}&q=
                                 <div class="product-info-overlay">
                                     <h3 class="product-name"><?php echo htmlspecialchars($produto['nome']); ?></h3>
                                     <h3 class="product-description">
-                                        <?php echo htmlspecialchars($produto['categoria']); ?><br>
+                                        <?php echo htmlspecialchars($produto['categoria']); ?> (<?php echo htmlspecialchars($produto['medida']); ?>)<br>
                                         R$ <?php echo $preco_formatado; ?>
                                     </h3>
                                 </div>

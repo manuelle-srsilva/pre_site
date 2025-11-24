@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
 	                            <img src="<?php echo $foto_src; ?>" alt="<?php echo htmlspecialchars($produto['nome']); ?>">
 	                        </div>
 	                        <div class="card-content">
-	                            <h3 class="card-title"><?php echo htmlspecialchars($produto['nome']); ?></h3>	
+	                            <h3 class="card-title"><?php echo htmlspecialchars($produto['nome']); ?> (<?php echo htmlspecialchars($produto['medida']); ?>)</h3>	
 	                            <p><span>R$</span><?php echo number_format($produto['preco'], 2, ',', '.'); ?></p>
 	                            <p class="card-category"><?php echo htmlspecialchars($produto['categoria']); ?></p>
 	                        </div>
