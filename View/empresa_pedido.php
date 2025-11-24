@@ -126,6 +126,7 @@ if ($empresa_id) {
                             echo '</div>';
                             echo '<div class="card-meta">';
                             echo '<span class="meta-item"><span class="meta-label">Cliente:</span> ' . htmlspecialchars($o['cliente_nome'] ?? 'Cliente') . '</span>';
+	                            echo '<span class="meta-item"><span class="meta-label">Telefone:</span> ' . htmlspecialchars($o['cliente_telefone'] ?? 'Não Informado') . '</span>';
                             echo '<span class="meta-item"><span class="meta-label">Data de Retirada:</span> ' . date('d/m/Y', strtotime($o['pickup_date'] ?? $o['created_at'])) . '</span>';
                             echo '<span class="meta-item"><strong>Hora:</strong> ' . htmlspecialchars($o['pickup_time'] ?? '') . '</span>';
 	                            

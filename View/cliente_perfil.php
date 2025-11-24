@@ -21,11 +21,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
     $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_STRING);
 
     if ($id == $_SESSION['id']) {
-        if ($clienteController->updateClient($id, $nome, $email)) {
+        if ($clienteController->updateClient($id, $nome, $email, $telefone)) {
             $_SESSION['nome'] = $nome;
             $_SESSION['email'] = $email;
+            $_SESSION['telefone'] = $telefone;
             $_SESSION['mensagem_perfil'] = "Perfil atualizado com sucesso!";
         } else {
             $_SESSION['mensagem_perfil'] = "Erro ao atualizar o perfil.";
@@ -42,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $cliente_id = $_SESSION['id'];
 $cliente_nome = $_SESSION['nome'];
 $cliente_email = $_SESSION['email'];
+$cliente_telefone = $_SESSION['telefone'];
 
 ?>
 <!DOCTYPE html>
@@ -106,6 +109,12 @@ $cliente_email = $_SESSION['email'];
                             <!-- O 'id' foi alterado para 'email' para corresponder ao 'for' da label -->
                             <input type="email" id="email" value="<?= htmlspecialchars($cliente_email) ?>" name="email" disabled required>
                         </div>
+
+                        <div class="form-field">
+                            <label for="telefone">Telefone</label>
+                            <!-- O 'id' foi alterado para 'telefone' para corresponder ao 'for' da label -->
+                            <input type="text" id="telefone" value="<?= htmlspecialchars($cliente_telefone) ?>" name="telefone" disabled required>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -122,7 +131,7 @@ $cliente_email = $_SESSION['email'];
         const editButton = card.querySelector('.card-edit-button');
         const saveButton = card.querySelector('.card-save-button');
         const cancelButton = card.querySelector('.card-cancel-button');
-        const inputs = card.querySelectorAll('input[name="nome"], input[name="email"]');
+        const inputs = card.querySelectorAll('input[name="nome"], input[name="email"], input[name="telefone"]');
         const form = document.getElementById('perfil-form');
 
         // Armazenar valores originais para a função de cancelar

@@ -18,9 +18,9 @@ class Cliente {
         $this->db = Connection::getInstance();
     }
 
-    public function registerClient ($nome, $email, $senha) {
+    public function registerClient ($nome, $email, $telefone, $senha) {
         try {
-            $sql = 'INSERT INTO cliente (nome, email, senha) VALUES (:nome, :email, :senha)';
+            $sql = 'INSERT INTO cliente (nome, email, telefone, senha) VALUES (:nome, :email, :telefone, :senha)';
 
             $hashedPassword = password_hash($senha, PASSWORD_DEFAULT);
 
@@ -28,6 +28,7 @@ class Cliente {
 
             $stmt->bindParam(":nome", $nome, PDO::PARAM_STR);
             $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+            $stmt->bindParam(":telefone", $telefone, PDO::PARAM_STR);
             $stmt->bindParam(":senha", $hashedPassword, PDO::PARAM_STR);
 
             return $stmt->execute();
@@ -74,15 +75,16 @@ class Cliente {
         }
     }
 
-    public function getClienteInfo ($id, $nome, $email, $senha) {
+    public function getClienteInfo ($id, $nome, $email, $telefone, $senha) {
         try {
-            $sql = "SELECT nome, email, senha FROM cliente WHERE id = :id AND nome = :nome AND email = :email AND senha = :senha";
+            $sql = "SELECT nome, email, telefone, senha FROM cliente WHERE id = :id AND nome = :nome AND email = :email AND telefone = :telefone AND senha = :senha";
 
             $stmt = $this->db->prepare($sql);
 
             $stmt->bindParam(":id", $id, PDO::PARAM_INT);
             $stmt->bindParam(":nome", $nome, PDO::PARAM_STR);
             $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+            $stmt->bindParam(":telefone", $telefone, PDO::PARAM_STR);
             $stmt->bindParam(":senha", $senha, PDO::PARAM_STR);
 
             $stmt->execute();
@@ -95,15 +97,16 @@ class Cliente {
         }
     }
 
-    public function updateClient ($id, $nome, $email) {
+    public function updateClient ($id, $nome, $email, $telefone) {
         try {
-            $sql = 'UPDATE cliente SET nome = :nome, email = :email WHERE id = :id';
+            $sql = 'UPDATE cliente SET nome = :nome, email = :email, telefone = :telefone WHERE id = :id';
 
             $stmt = $this->db->prepare($sql);
 
             $stmt->bindParam(":id", $id, PDO::PARAM_INT);
             $stmt->bindParam(":nome", $nome, PDO::PARAM_STR);
             $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+            $stmt->bindParam(":telefone", $telefone, PDO::PARAM_STR);
 
             return $stmt->execute();
         }

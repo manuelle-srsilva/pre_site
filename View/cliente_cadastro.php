@@ -9,7 +9,7 @@ $clienteController = new ClienteController();
 $registerMessage = '';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if(isset($_POST['nome'], $_POST['email'], $_POST['senha'])) {
+    if(isset($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['senha'])) {
 
         if ($_POST['senha'] !== $_POST['confirmacao_senha']) {
             $registerMessage = "As senhas não coincidem. Tente novamente.";
@@ -17,13 +17,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         else {
             $nome = $_POST['nome'];
             $email = $_POST['email'];
+            $telefone = $_POST['telefone'];
             $senha = $_POST['senha'];
 
             if($clienteController->checkClienteByEmail($email)) {
                 $registerMessage = 'Já existe um usuário cadastrado com esse e-mail';
             }
             else {
-                if($clienteController->cadastroCliente($nome, $email, $senha)) {
+                if($clienteController->cadastroCliente($nome, $email, $telefone, $senha)) {
                     header('Location: cliente_login.php');
                     exit();
                 }
@@ -85,14 +86,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input type="email" id="email" name="email" class="form-input" placeholder="">
                     </div>
 
-                      <div class="form-group">
-                        <label for="email" class="form-label">Senha</label>
-                        <input type="password" id="email" name="senha" class="form-input" placeholder="">
+                    <div class="form-group">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" class="form-input" placeholder="">
                     </div>
 
                       <div class="form-group">
-                        <label for="email" class="form-label">Confirmação de senha</label>
-                        <input type="password" id="email" name="confirmacao_senha" class="form-input" placeholder="">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="password" id="senha" name="senha" class="form-input" placeholder="">
+                    </div>
+
+                      <div class="form-group">
+                        <label for="confirmacao_senha" class="form-label">Confirmação de senha</label>
+                        <input type="password" id="confirmacao_senha" name="confirmacao_senha" class="form-input" placeholder="">
                     </div>
                     <div class="form-group form-button-ok">
                     <button type="submit" class="ok-button">OK</button>

@@ -12,12 +12,12 @@ class ClienteController{
     }
 
     //Cadastro de cliente
-    public function cadastroCliente($nome, $email, $senha){
+    public function cadastroCliente($nome, $email, $telefone, $senha){
         if(empty($nome) or empty($email) or empty($senha)){
             return false;
         }
 
-        return $this->clienteModel->registerClient($nome, $email, $senha);
+        return $this->clienteModel->registerClient($nome, $email, $telefone, $senha);
     }
     
     // E-MAIL JÁ CADASTRADO?
@@ -37,6 +37,7 @@ class ClienteController{
             $_SESSION['id'] = $cliente['id'];
             $_SESSION['nome'] = $cliente['nome'];
             $_SESSION['email'] = $cliente['email'];
+            $_SESSION['telefone'] = $cliente['telefone'];
 
             return true;
         }
@@ -54,18 +55,18 @@ class ClienteController{
     }
 
     // Buscar informações do cliente (pelo cliente)
-    public function getClienteInfo($id, $nome, $email, $senha){
-        return $this->clienteModel->getClienteInfo($id, $nome, $email, $senha);
+    public function getClienteInfo($id, $nome, $email, $telefone, $senha){
+        return $this->clienteModel->getClienteInfo($id, $nome, $email, $telefone, $senha);
     }
 
     //Atualizar informações de cadastro do cliente
-    public function updateClient($id, $nome, $email){
+    public function updateClient($id, $nome, $email, $telefone){
 
-        if(empty($id) or empty($nome) or empty($email)){
+        if(empty($id) or empty($nome) or empty($email) or empty($telefone)){
             return false;
         }
 
-        return $this->clienteModel->updateClient($id, $nome, $email);
+        return $this->clienteModel->updateClient($id, $nome, $email, $telefone);
     }
 
     //Excluir cadastro do cliente
