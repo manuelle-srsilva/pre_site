@@ -9,6 +9,9 @@ $comentarioController = new ComentarioController();
 $id_usuario_logado = $_SESSION['id'] ?? null;
 $registerMessage = '';
 
+// ID do empreendimento (prioriza GET, senão usa sessão da empresa logada)
+$empreendimento_id = $_GET['id'] ?? $_SESSION['id_empreendimento'] ?? null;
+
 // --- LÓGICA PARA DELETAR, ATUALIZAR E CRIAR ---
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$id_usuario_logado) {
@@ -18,10 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $action = $_POST['action'] ?? null;
     $comentario_id = $_POST['comentario_id'] ?? null;
+    $post_empreendimento = $_POST['id_empreendimento'] ?? $_GET['id'] ?? $_SESSION['id_empreendimento'] ?? null;
 
     if ($action === 'delete' && $comentario_id) {
         if ($comentarioController->deleteComentario($comentario_id)) {
-            header('Location: pag_comentario.php');
+            header('Location: pag_comentario_empresa.php' . ($post_empreendimento ? '?id=' . urlencode($post_empreendimento) : ''));
             exit();
         } else {
             $registerMessage = 'Erro ao excluir o comentário.';
@@ -30,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $novo_comentario = $_POST['comentario'] ?? '';
         if (!empty($novo_comentario)) {
             if ($comentarioController->updateComentario($comentario_id, $novo_comentario)) {
-                header('Location: pag_comentario.php');
+                header('Location: pag_comentario_empresa.php' . ($post_empreendimento ? '?id=' . urlencode($post_empreendimento) : ''));
                 exit();
             } else {
                 $registerMessage = 'Erro ao atualizar o comentário.';
@@ -40,11 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } elseif ($action === 'create') {
         $comentario = $_POST['comentario'] ?? null;
+        $id_empreendimento_post = $_POST['id_empreendimento'] ?? null;
         if (!$comentario) {
             $registerMessage = "O comentário não pode estar vazio.";
         } else {
-            if ($comentarioController->cadastroComentario($comentario, $id_usuario_logado)) {
-                header('Location: pag_comentario.php');
+            if ($comentarioController->cadastroComentario($comentario, $id_usuario_logado, $id_empreendimento_post)) {
+                header('Location: pag_comentario_empresa.php' . ($id_empreendimento_post ? '?id=' . urlencode($id_empreendimento_post) : ''));
                 exit();
             } else {
                 $registerMessage = 'Erro ao postar comentário.';
@@ -55,8 +60,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 skip_post:
 
-$comentarios = $comentarioController->listarComentarios();
-$countComentarios = $comentarioController->countComentarios();
+$comentarios = $comentarioController->listarComentarios($empreendimento_id);
+$countComentarios = $comentarioController->countComentarios($empreendimento_id);
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +89,11 @@ $countComentarios = $comentarioController->countComentarios();
             </div>
             <nav class="nav">
                
-                <a href="../View/empresa_loja.php" class="nav-link nav-button">Voltar</a>
+                <?php if (!empty($empreendimento_id)): ?>
+                    <a href="empresa_loja.php?id=<?= urlencode($empreendimento_id) ?>" class="nav-link nav-button">Voltar</a>
+                <?php else: ?>
+                    <a href="painel_profissional_empresa.php" class="nav-link nav-button">Voltar</a>
+                <?php endif; ?>
             </nav>
             <div class="menu-container">
                 <button class="menu-toggle" aria-label="Menu">
@@ -131,10 +140,11 @@ $countComentarios = $comentarioController->countComentarios();
                                         <?= nl2br(htmlspecialchars($comentario['comentario'])) ?>
                                     </div>
 
-                                    <?php if ($id_usuario_logado && $id_usuario_logado == $comentario["id_cliente"]): ?>
-                                        <form method="post" action="pag_comentario.php" class="edit-form" id="edit-form-<?= $comentario['id'] ?>">
+                                        <?php if ($id_usuario_logado && $id_usuario_logado == $comentario["id_cliente"]): ?>
+                                        <form method="post" action="pag_comentario_empresa.php" class="edit-form" id="edit-form-<?= $comentario['id'] ?>">
                                             <input type="hidden" name="action" value="update">
                                             <input type="hidden" name="comentario_id" value="<?= $comentario['id'] ?>">
+                                            <input type="hidden" name="id_empreendimento" value="<?= htmlspecialchars($empreendimento_id) ?>">
                                             <textarea name="comentario" required><?= htmlspecialchars($comentario['comentario']) ?></textarea>
                                             <div class="edit-actions">
                                                 <button type="button" class="cancel-btn" onclick="toggleEdit(<?= $comentario['id'] ?>)">Cancelar</button>

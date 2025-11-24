@@ -121,8 +121,8 @@ $mapUrl = "https://www.google.com/maps/embed/v1/place?key={$googleMapsApiKey}&q=
         </section>
 
         <div class="container">
-            <div class="comment-feed">
-                <a href="../View/pag_comentario.php"> Comentários</a>
+                <div class="comment-feed">
+                <a href="pag_comentario.php?id=<?php echo urlencode($empreendimento_id); ?>"> Comentários</a>
             </div>
         </div>
 

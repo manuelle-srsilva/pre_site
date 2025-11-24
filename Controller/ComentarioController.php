@@ -11,11 +11,11 @@ class ComentarioController{
     }
 
     //Cadastro de comentário
-    public function cadastroComentario($comentario, $id_cliente){
+    public function cadastroComentario($comentario, $id_cliente, $id_empreendimento = null){
         if(empty($comentario) || empty($id_cliente)){
             return false;
         }
-        return $this->comentarioModel->registerComentario($comentario, $id_cliente);
+        return $this->comentarioModel->registerComentario($comentario, $id_cliente, $id_empreendimento);
     }
 
     // Buscar comentário (não utilizada no fluxo atual, mas mantida)
@@ -41,12 +41,12 @@ class ComentarioController{
     }
 
     // Listar todos os comentários
-    public function listarComentarios() {
-        return $this->comentarioModel->listComentarios();
+    public function listarComentarios($id_empreendimento = null) {
+        return $this->comentarioModel->listComentarios($id_empreendimento);
     }
 
-    public function countComentarios(){
-        return $this->comentarioModel->countComentarios();
+    public function countComentarios($id_empreendimento = null){
+        return $this->comentarioModel->countComentarios($id_empreendimento);
     }
 }
 ?>

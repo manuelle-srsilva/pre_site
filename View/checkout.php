@@ -20,7 +20,7 @@
                 <span class="logo-text">Agry<span class="logo-highlight">bem</span></span>
             </div>
             <nav class="nav">
-                <a href="carrinho.php" class="nav-button">Voltar ao carrinho</a>
+                <a href="../View/carrinho.php" class="nav-button">Voltar ao carrinho</a>
             </nav>
         </div>
     </header>
